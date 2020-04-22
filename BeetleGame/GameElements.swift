@@ -16,4 +16,3 @@ struct  CollisionBitMask {
     static let FLOWER_CATEGORY: UInt32 = 0x1 << 2   //100
     static let GROUND_CATEGORY: UInt32 = 0x1 << 3   //1000
 }
-

@@ -28,10 +28,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let birdAtlas = SKTextureAtlas(named: "player")
     var birdSprites = Array<Any>()
     var bird = SKSpriteNode()
-    var repeateActionBir = SKAction()
+    var repeateActionBird = SKAction()
     
     override func didMove(to view: SKView) {
-        
+        createScene()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,5 +74,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(background)
             
         }
+        
+        birdSprites.append(birdAtlas.textureNamed("bird1"))
+        birdSprites.append(birdAtlas.textureNamed("bird2"))
+        birdSprites.append(birdAtlas.textureNamed("bird3"))
+        birdSprites.append(birdAtlas.textureNamed("bird4"))
+        
+        self.bird = createBird()
+        self.addChild(bird)
+        
+        let animateBird = SKAction.animate(with: self.birdSprites as! [SKTexture], timePerFrame: 0.1)
+        self.repeateActionBird = SKAction.repeatForever(animateBird)
+    }
+}
+
+extension GameScene {
+    func createBird() -> SKSpriteNode {
+        let bird = SKSpriteNode(texture: SKTextureAtlas(named: "player").textureNamed("bird1"))
+        
+        bird.size = CGSize(width: 50, height: 50)
+        bird.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: bird.size.width / 2)
+        bird.physicsBody?.linearDamping = 1.1
+        bird.physicsBody?.restitution = 0
+        
+        bird.physicsBody?.categoryBitMask = CollisionBitMask.BIRD_CATEGORY
+        bird.physicsBody?.collisionBitMask = CollisionBitMask.BIRD_CATEGORY | CollisionBitMask.GROUND_CATEGORY
+        bird.physicsBody?.contactTestBitMask = CollisionBitMask.PILLAR_CATEGORY | CollisionBitMask.FLOWER_CATEGORY | CollisionBitMask.GROUND_CATEGORY
+        bird.physicsBody?.affectedByGravity = false
+        bird.physicsBody?.isDynamic = true
+        
+        return bird
+        
+        
     }
 }
