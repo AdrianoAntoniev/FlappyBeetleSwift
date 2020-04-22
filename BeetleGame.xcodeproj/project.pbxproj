@@ -17,6 +17,9 @@
 		D714FC442450CE89005E2808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D714FC422450CE89005E2808 /* LaunchScreen.storyboard */; };
 		D714FC4F2450CE89005E2808 /* BeetleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC4E2450CE89005E2808 /* BeetleGameTests.swift */; };
 		D714FC5A2450CE89005E2808 /* BeetleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC592450CE89005E2808 /* BeetleGameUITests.swift */; };
+		D714FC692450D576005E2808 /* player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D714FC672450D576005E2808 /* player.atlas */; };
+		D714FC6A2450D576005E2808 /* CoinSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D714FC682450D576005E2808 /* CoinSound.mp3 */; };
+		D714FC6D2450D6FF005E2808 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC6C2450D6FF005E2808 /* GameElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		D714FC552450CE89005E2808 /* BeetleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeetleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D714FC592450CE89005E2808 /* BeetleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeetleGameUITests.swift; sourceTree = "<group>"; };
 		D714FC5B2450CE89005E2808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D714FC672450D576005E2808 /* player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = player.atlas; sourceTree = "<group>"; };
+		D714FC682450D576005E2808 /* CoinSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CoinSound.mp3; path = ../assets/CoinSound.mp3; sourceTree = "<group>"; };
+		D714FC6C2450D6FF005E2808 /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 		D714FC322450CE88005E2808 /* BeetleGame */ = {
 			isa = PBXGroup;
 			children = (
+				D714FC672450D576005E2808 /* player.atlas */,
+				D714FC6C2450D6FF005E2808 /* GameElements.swift */,
+				D714FC682450D576005E2808 /* CoinSound.mp3 */,
 				D714FC332450CE88005E2808 /* AppDelegate.swift */,
 				D714FC352450CE88005E2808 /* GameScene.sks */,
 				D714FC372450CE88005E2808 /* Actions.sks */,
@@ -238,6 +247,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D714FC6A2450D576005E2808 /* CoinSound.mp3 in Resources */,
+				D714FC692450D576005E2808 /* player.atlas in Resources */,
 				D714FC3F2450CE88005E2808 /* Main.storyboard in Resources */,
 				D714FC362450CE88005E2808 /* GameScene.sks in Resources */,
 				D714FC412450CE89005E2808 /* Assets.xcassets in Resources */,
@@ -267,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D714FC6D2450D6FF005E2808 /* GameElements.swift in Sources */,
 				D714FC3A2450CE88005E2808 /* GameScene.swift in Sources */,
 				D714FC3C2450CE88005E2808 /* GameViewController.swift in Sources */,
 				D714FC342450CE88005E2808 /* AppDelegate.swift in Sources */,
