@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D714FC342450CE88005E2808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC332450CE88005E2808 /* AppDelegate.swift */; };
+		D714FC362450CE88005E2808 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D714FC352450CE88005E2808 /* GameScene.sks */; };
+		D714FC382450CE88005E2808 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D714FC372450CE88005E2808 /* Actions.sks */; };
+		D714FC3A2450CE88005E2808 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC392450CE88005E2808 /* GameScene.swift */; };
+		D714FC3C2450CE88005E2808 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC3B2450CE88005E2808 /* GameViewController.swift */; };
+		D714FC3F2450CE88005E2808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D714FC3D2450CE88005E2808 /* Main.storyboard */; };
+		D714FC412450CE89005E2808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D714FC402450CE89005E2808 /* Assets.xcassets */; };
+		D714FC442450CE89005E2808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D714FC422450CE89005E2808 /* LaunchScreen.storyboard */; };
+		D714FC4F2450CE89005E2808 /* BeetleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC4E2450CE89005E2808 /* BeetleGameTests.swift */; };
+		D714FC5A2450CE89005E2808 /* BeetleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714FC592450CE89005E2808 /* BeetleGameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D714FC4B2450CE89005E2808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D714FC282450CE88005E2808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D714FC2F2450CE88005E2808;
+			remoteInfo = BeetleGame;
+		};
+		D714FC562450CE89005E2808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D714FC282450CE88005E2808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D714FC2F2450CE88005E2808;
+			remoteInfo = BeetleGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D714FC302450CE88005E2808 /* BeetleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeetleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D714FC332450CE88005E2808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D714FC352450CE88005E2808 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		D714FC372450CE88005E2808 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		D714FC392450CE88005E2808 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D714FC3B2450CE88005E2808 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D714FC3E2450CE88005E2808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D714FC402450CE89005E2808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D714FC432450CE89005E2808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D714FC452450CE89005E2808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D714FC4A2450CE89005E2808 /* BeetleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeetleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D714FC4E2450CE89005E2808 /* BeetleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeetleGameTests.swift; sourceTree = "<group>"; };
+		D714FC502450CE89005E2808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D714FC552450CE89005E2808 /* BeetleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeetleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D714FC592450CE89005E2808 /* BeetleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeetleGameUITests.swift; sourceTree = "<group>"; };
+		D714FC5B2450CE89005E2808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D714FC2D2450CE88005E2808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D714FC472450CE89005E2808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D714FC522450CE89005E2808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D714FC272450CE88005E2808 = {
+			isa = PBXGroup;
+			children = (
+				D714FC322450CE88005E2808 /* BeetleGame */,
+				D714FC4D2450CE89005E2808 /* BeetleGameTests */,
+				D714FC582450CE89005E2808 /* BeetleGameUITests */,
+				D714FC312450CE88005E2808 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D714FC312450CE88005E2808 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D714FC302450CE88005E2808 /* BeetleGame.app */,
+				D714FC4A2450CE89005E2808 /* BeetleGameTests.xctest */,
+				D714FC552450CE89005E2808 /* BeetleGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D714FC322450CE88005E2808 /* BeetleGame */ = {
+			isa = PBXGroup;
+			children = (
+				D714FC332450CE88005E2808 /* AppDelegate.swift */,
+				D714FC352450CE88005E2808 /* GameScene.sks */,
+				D714FC372450CE88005E2808 /* Actions.sks */,
+				D714FC392450CE88005E2808 /* GameScene.swift */,
+				D714FC3B2450CE88005E2808 /* GameViewController.swift */,
+				D714FC3D2450CE88005E2808 /* Main.storyboard */,
+				D714FC402450CE89005E2808 /* Assets.xcassets */,
+				D714FC422450CE89005E2808 /* LaunchScreen.storyboard */,
+				D714FC452450CE89005E2808 /* Info.plist */,
+			);
+			path = BeetleGame;
+			sourceTree = "<group>";
+		};
+		D714FC4D2450CE89005E2808 /* BeetleGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				D714FC4E2450CE89005E2808 /* BeetleGameTests.swift */,
+				D714FC502450CE89005E2808 /* Info.plist */,
+			);
+			path = BeetleGameTests;
+			sourceTree = "<group>";
+		};
+		D714FC582450CE89005E2808 /* BeetleGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D714FC592450CE89005E2808 /* BeetleGameUITests.swift */,
+				D714FC5B2450CE89005E2808 /* Info.plist */,
+			);
+			path = BeetleGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D714FC2F2450CE88005E2808 /* BeetleGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D714FC5E2450CE89005E2808 /* Build configuration list for PBXNativeTarget "BeetleGame" */;
+			buildPhases = (
+				D714FC2C2450CE88005E2808 /* Sources */,
+				D714FC2D2450CE88005E2808 /* Frameworks */,
+				D714FC2E2450CE88005E2808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeetleGame;
+			productName = BeetleGame;
+			productReference = D714FC302450CE88005E2808 /* BeetleGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D714FC492450CE89005E2808 /* BeetleGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D714FC612450CE89005E2808 /* Build configuration list for PBXNativeTarget "BeetleGameTests" */;
+			buildPhases = (
+				D714FC462450CE89005E2808 /* Sources */,
+				D714FC472450CE89005E2808 /* Frameworks */,
+				D714FC482450CE89005E2808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D714FC4C2450CE89005E2808 /* PBXTargetDependency */,
+			);
+			name = BeetleGameTests;
+			productName = BeetleGameTests;
+			productReference = D714FC4A2450CE89005E2808 /* BeetleGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D714FC542450CE89005E2808 /* BeetleGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D714FC642450CE89005E2808 /* Build configuration list for PBXNativeTarget "BeetleGameUITests" */;
+			buildPhases = (
+				D714FC512450CE89005E2808 /* Sources */,
+				D714FC522450CE89005E2808 /* Frameworks */,
+				D714FC532450CE89005E2808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D714FC572450CE89005E2808 /* PBXTargetDependency */,
+			);
+			name = BeetleGameUITests;
+			productName = BeetleGameUITests;
+			productReference = D714FC552450CE89005E2808 /* BeetleGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D714FC282450CE88005E2808 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Adriano Rodrigues Vieira";
+				TargetAttributes = {
+					D714FC2F2450CE88005E2808 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					D714FC492450CE89005E2808 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D714FC2F2450CE88005E2808;
+					};
+					D714FC542450CE89005E2808 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D714FC2F2450CE88005E2808;
+					};
+				};
+			};
+			buildConfigurationList = D714FC2B2450CE88005E2808 /* Build configuration list for PBXProject "BeetleGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D714FC272450CE88005E2808;
+			productRefGroup = D714FC312450CE88005E2808 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D714FC2F2450CE88005E2808 /* BeetleGame */,
+				D714FC492450CE89005E2808 /* BeetleGameTests */,
+				D714FC542450CE89005E2808 /* BeetleGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D714FC2E2450CE88005E2808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D714FC3F2450CE88005E2808 /* Main.storyboard in Resources */,
+				D714FC362450CE88005E2808 /* GameScene.sks in Resources */,
+				D714FC412450CE89005E2808 /* Assets.xcassets in Resources */,
+				D714FC442450CE89005E2808 /* LaunchScreen.storyboard in Resources */,
+				D714FC382450CE88005E2808 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D714FC482450CE89005E2808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D714FC532450CE89005E2808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D714FC2C2450CE88005E2808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D714FC3A2450CE88005E2808 /* GameScene.swift in Sources */,
+				D714FC3C2450CE88005E2808 /* GameViewController.swift in Sources */,
+				D714FC342450CE88005E2808 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D714FC462450CE89005E2808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D714FC4F2450CE89005E2808 /* BeetleGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D714FC512450CE89005E2808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D714FC5A2450CE89005E2808 /* BeetleGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D714FC4C2450CE89005E2808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D714FC2F2450CE88005E2808 /* BeetleGame */;
+			targetProxy = D714FC4B2450CE89005E2808 /* PBXContainerItemProxy */;
+		};
+		D714FC572450CE89005E2808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D714FC2F2450CE88005E2808 /* BeetleGame */;
+			targetProxy = D714FC562450CE89005E2808 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D714FC3D2450CE88005E2808 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D714FC3E2450CE88005E2808 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D714FC422450CE89005E2808 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D714FC432450CE89005E2808 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D714FC5C2450CE89005E2808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D714FC5D2450CE89005E2808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D714FC5F2450CE89005E2808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D9YSKR59P;
+				INFOPLIST_FILE = BeetleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.adrianorodrigues.BeetleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D714FC602450CE89005E2808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D9YSKR59P;
+				INFOPLIST_FILE = BeetleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.adrianorodrigues.BeetleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D714FC622450CE89005E2808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D9YSKR59P;
+				INFOPLIST_FILE = BeetleGameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.adrianorodrigues.BeetleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeetleGame.app/BeetleGame";
+			};
+			name = Debug;
+		};
+		D714FC632450CE89005E2808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D9YSKR59P;
+				INFOPLIST_FILE = BeetleGameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.adrianorodrigues.BeetleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeetleGame.app/BeetleGame";
+			};
+			name = Release;
+		};
+		D714FC652450CE89005E2808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D9YSKR59P;
+				INFOPLIST_FILE = BeetleGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.adrianorodrigues.BeetleGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeetleGame;
+			};
+			name = Debug;
+		};
+		D714FC662450CE89005E2808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D9YSKR59P;
+				INFOPLIST_FILE = BeetleGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.adrianorodrigues.BeetleGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeetleGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D714FC2B2450CE88005E2808 /* Build configuration list for PBXProject "BeetleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D714FC5C2450CE89005E2808 /* Debug */,
+				D714FC5D2450CE89005E2808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D714FC5E2450CE89005E2808 /* Build configuration list for PBXNativeTarget "BeetleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D714FC5F2450CE89005E2808 /* Debug */,
+				D714FC602450CE89005E2808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D714FC612450CE89005E2808 /* Build configuration list for PBXNativeTarget "BeetleGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D714FC622450CE89005E2808 /* Debug */,
+				D714FC632450CE89005E2808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D714FC642450CE89005E2808 /* Build configuration list for PBXNativeTarget "BeetleGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D714FC652450CE89005E2808 /* Debug */,
+				D714FC662450CE89005E2808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D714FC282450CE88005E2808 /* Project object */;
+}
