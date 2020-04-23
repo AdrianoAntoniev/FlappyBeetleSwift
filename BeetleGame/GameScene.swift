@@ -66,11 +66,77 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 attachVelocityAndImpulseToBird()
             }
         }
+        
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            if isDied {
+                if restartButton.contains(location) {
+                    if UserDefaults.standard.object(forKey: Defaults.HIGHEST_SCORE) != nil {
+                        let highScore = UserDefaults.standard.integer(forKey: Defaults.HIGHEST_SCORE)
+                        
+                        if highScore < Int(scoreLabel.text!)! {
+                            UserDefaults.standard.set(scoreLabel.text, forKey: Defaults.HIGHEST_SCORE)
+                        }
+                    } else {
+                        UserDefaults.standard.set(0, forKey: Defaults.HIGHEST_SCORE)
+                    }
+                    restartScene()
+                }
+            } else {
+                if pauseButton.contains(location) {
+                    if !isPaused {
+                        isPaused = true
+                        pauseButton.texture = SKTexture(imageNamed: Assets.PLAY_BUTTON)
+                    } else {
+                        isPaused = false
+                        pauseButton.texture = SKTexture(imageNamed: Assets.PAUSE_BUTTON)
+                    }
+                }
+            }
+            
+            
+        }
     }
     
     func attachVelocityAndImpulseToBird() {
         bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let firstBody = contact.bodyA
+        let secondBody = contact.bodyB
+        
+        let isBirdCollidedWithPillar = firstBody.categoryBitMask == CollisionBitMask.BIRD_CATEGORY && secondBody.categoryBitMask == CollisionBitMask.PILLAR_CATEGORY || firstBody.categoryBitMask == CollisionBitMask.PILLAR_CATEGORY && secondBody.categoryBitMask == CollisionBitMask.BIRD_CATEGORY
+        let isBirdCollidedWithGroundOrCell = firstBody.categoryBitMask == CollisionBitMask.BIRD_CATEGORY && secondBody.categoryBitMask == CollisionBitMask.GROUND_CATEGORY || firstBody.categoryBitMask == CollisionBitMask.GROUND_CATEGORY && secondBody.categoryBitMask == CollisionBitMask.BIRD_CATEGORY
+        let isBirdCollidedWithFlower = firstBody.categoryBitMask == CollisionBitMask.BIRD_CATEGORY && secondBody.categoryBitMask == CollisionBitMask.FLOWER_CATEGORY
+        let isFlowerCollidedWithBird = firstBody.categoryBitMask == CollisionBitMask.FLOWER_CATEGORY && secondBody.categoryBitMask == CollisionBitMask.BIRD_CATEGORY
+
+        if  isBirdCollidedWithPillar || isBirdCollidedWithGroundOrCell {
+            enumerateChildNodes(withName: Assets.WALLPAIR_NAME) { (node, error) in
+                node.speed = 0
+                self.removeAllActions()
+            }
+            if !isDied {
+                isDied = true
+                createRestartButton()
+                pauseButton.removeFromParent()
+                self.bird.removeAllActions()
+            }
+        } else if isBirdCollidedWithFlower {
+            removeFlowerAndUpdateScoreAnimation(secondBody)
+        } else if isFlowerCollidedWithBird {
+            removeFlowerAndUpdateScoreAnimation(firstBody)
+        }
+        
+    }
+    
+    func removeFlowerAndUpdateScoreAnimation(_ body: SKPhysicsBody) {
+        run(coinSound)
+        score += 1
+        scoreLabel.text = "\(score)"
+        body.node?.removeFromParent()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -131,6 +197,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         taptoPlayLabel = createTapToPlayLabel()
         self.addChild(taptoPlayLabel)
+    }
+    
+    func restartScene() {
+        self.removeAllChildren()
+        self.removeAllActions()
+        isDied = false
+        isGameStarted = false
+        score = 0
+        createScene()
     }
 }
 
@@ -201,8 +276,8 @@ extension GameScene {
         highscoreLabel.position = CGPoint(x: self.frame.width - 80, y: self.frame.height - 22)
         
         var highestScoreNumber = 0
-        if let highestScore = UserDefaults.standard.object(forKey: Defaults.HIGHEST_SCORE) {
-            highestScoreNumber = highestScore as! Int
+        if UserDefaults.standard.object(forKey: Defaults.HIGHEST_SCORE) != nil {
+            highestScoreNumber = UserDefaults.standard.integer(forKey: Defaults.HIGHEST_SCORE)
         }
         highscoreLabel.text = "Highest Score: \(highestScoreNumber)"
         

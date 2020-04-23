@@ -27,6 +27,7 @@ struct Assets {
     static let BIRD_FILES = ["bird1", "bird2", "bird3", "bird4"]
     static let RESTART_BUTTON = "restart"
     static let PAUSE_BUTTON = "pause"
+    static let PLAY_BUTTON = "play"
     static let LOGO = "logo"
     static let FLOWER = "flower"
     static let PILLER = "piller"
