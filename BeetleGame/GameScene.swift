@@ -28,14 +28,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let birdAtlas = SKTextureAtlas(named: Assets.PLAYER_ATLAS_FILE_NAME)
     var birdSprites = Array<Any>()
     var bird = SKSpriteNode()
-    var repeateActionBird = SKAction()
+    var repeatActionBird = SKAction()
     
     override func didMove(to view: SKView) {
         createScene()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if !isGameStarted {
+            isGameStarted = true
+            bird.physicsBody?.affectedByGravity = true
+            createPauseButton()
+            
+            logoImage.run(SKAction.scale(to: 0.5, duration: 0.3), completion: {
+                self.logoImage.removeFromParent()
+            })
+            taptoPlayLabel.removeFromParent()
+            
+            bird.run(repeatActionBird)
+            
+            attachVelocityAndImpulseToBird()
+        } else {
+            if !isDied {
+                attachVelocityAndImpulseToBird()
+            }
+        }
+    }
+    
+    func attachVelocityAndImpulseToBird() {
+        bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -84,7 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(bird)
         
         let animateBird = SKAction.animate(with: self.birdSprites as! [SKTexture], timePerFrame: 0.1)
-        self.repeateActionBird = SKAction.repeatForever(animateBird)
+        self.repeatActionBird = SKAction.repeatForever(animateBird)
         
         scoreLabel = createScoreLabel()
         self.addChild(scoreLabel)
@@ -189,7 +211,8 @@ extension GameScene {
     
     func createTapToPlayLabel() -> SKLabelNode {
         let tapToPlayLabel = SKLabelNode()
-        tapToPlayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        //todo: tirar o 40 "hard-coded" e fazer de forma que o texto se adapte conforme a tela
+        tapToPlayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 40)
         tapToPlayLabel.text = GameTexts.TAPTOPLAY_LABEL
         tapToPlayLabel.fontColor = UIColor(red: 63/255, green: 79/255, blue: 14/255, alpha: 1.0)
         tapToPlayLabel.zPosition = 5
