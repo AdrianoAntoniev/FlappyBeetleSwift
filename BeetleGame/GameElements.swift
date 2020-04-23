@@ -16,3 +16,28 @@ struct  CollisionBitMask {
     static let FLOWER_CATEGORY: UInt32 = 0x1 << 2   //100
     static let GROUND_CATEGORY: UInt32 = 0x1 << 3   //1000
 }
+
+struct Assets {
+    static let COIN_SOUND = "CoinSound.mp3"
+    static let PLAYER_ATLAS_FILE_NAME = "player"
+    static let BACKGROUND_NAME = "background"
+    static let BACKGROUND_FILE_NAME = "bg"
+    static let BIRD_FILES = ["bird1", "bird2", "bird3", "bird4"]
+    static let RESTART_BUTTON = "restart"
+    static let PAUSE_BUTTON = "pause"
+    static let LOGO = "logo"
+}
+
+struct Fonts {
+    static let SCORE = "HelveticaNeue-Bold"
+    static let HIGHSCORE = "Helvetica-Bold"
+    static let TAPTOPLAY = "HelveticaNeue"
+}
+
+struct Defaults {
+    static let HIGHEST_SCORE = "highestScore"
+}
+
+struct GameTexts {
+    static let TAPTOPLAY_LABEL = "Tap anywhere to play"
+}

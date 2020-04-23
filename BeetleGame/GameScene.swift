@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var isGameStarted: Bool = false
     var isDied: Bool = false
-    let coinSound = SKAction.playSoundFileNamed("CoinSound.mp3", waitForCompletion: false)
+    let coinSound = SKAction.playSoundFileNamed(Assets.COIN_SOUND, waitForCompletion: false)
     
     var score: Int = 0
     var scoreLabel = SKLabelNode()
@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var moveAndRemove = SKAction()
     
     //Criando o passaro para a animacao
-    let birdAtlas = SKTextureAtlas(named: "player")
+    let birdAtlas = SKTextureAtlas(named: Assets.PLAYER_ATLAS_FILE_NAME)
     var birdSprites = Array<Any>()
     var bird = SKSpriteNode()
     var repeateActionBird = SKAction()
@@ -41,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         if isGameStarted {
             if !isDied {
-                enumerateChildNodes(withName: "background") { (node, error) in
+                enumerateChildNodes(withName: Assets.BACKGROUND_NAME) { (node, error) in
                     let bg = node as! SKSpriteNode
                     bg.position = CGPoint(x: bg.position.x - 2, y: bg.position.y)
                     
@@ -66,19 +66,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.backgroundColor = SKColor(red: 80.0/255.0, green: 192.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         
         for i in 0..<2 {
-            let background = SKSpriteNode(imageNamed: "bg")
+            let background = SKSpriteNode(imageNamed: Assets.BACKGROUND_FILE_NAME)
             background.anchorPoint = CGPoint(x: 0, y: 0)
             background.position = CGPoint(x: CGFloat(i) * self.frame.width, y: 0)
-            background.name = "background"
+            background.name = Assets.BACKGROUND_NAME
             background.size = (self.view?.bounds.size)!
             self.addChild(background)
             
         }
         
-        birdSprites.append(birdAtlas.textureNamed("bird1"))
-        birdSprites.append(birdAtlas.textureNamed("bird2"))
-        birdSprites.append(birdAtlas.textureNamed("bird3"))
-        birdSprites.append(birdAtlas.textureNamed("bird4"))
+        birdSprites.append(birdAtlas.textureNamed(Assets.BIRD_FILES[0]))
+        birdSprites.append(birdAtlas.textureNamed(Assets.BIRD_FILES[1]))
+        birdSprites.append(birdAtlas.textureNamed(Assets.BIRD_FILES[2]))
+        birdSprites.append(birdAtlas.textureNamed(Assets.BIRD_FILES[3]))
         
         self.bird = createBird()
         self.addChild(bird)
@@ -101,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
 extension GameScene {
     func createBird() -> SKSpriteNode {
-        let bird = SKSpriteNode(texture: SKTextureAtlas(named: "player").textureNamed("bird1"))
+        let bird = SKSpriteNode(texture: SKTextureAtlas(named: Assets.PLAYER_ATLAS_FILE_NAME).textureNamed(Assets.BIRD_FILES[0]))
         
         bird.size = CGSize(width: 50, height: 50)
         bird.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
@@ -120,7 +120,7 @@ extension GameScene {
     }
     
     func createRestartButton() {
-        restartButton = SKSpriteNode(imageNamed: "restart")
+        restartButton = SKSpriteNode(imageNamed: Assets.RESTART_BUTTON)
         restartButton.size = CGSize(width: 100, height: 100)
         restartButton.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         restartButton.zPosition = 6
@@ -130,7 +130,7 @@ extension GameScene {
     }
     
     func createPauseButton() {
-        pauseButton = SKSpriteNode(imageNamed: "pause")
+        pauseButton = SKSpriteNode(imageNamed: Assets.PAUSE_BUTTON)
         pauseButton.size = CGSize(width: 40, height: 40)
         pauseButton.position = CGPoint(x: self.frame.width - 30, y: 30)
         pauseButton.zPosition = 6
@@ -143,7 +143,7 @@ extension GameScene {
         scoreLabel.text = "\(score)"
         scoreLabel.zPosition = 5
         scoreLabel.fontSize = 50
-        scoreLabel.fontName = "HelveticaNeue-Bold"
+        scoreLabel.fontName = Fonts.SCORE
         
         let scoreBackground = SKShapeNode()
         scoreBackground.position = CGPoint(x: 0, y: 0)
@@ -166,20 +166,20 @@ extension GameScene {
         highscoreLabel.position = CGPoint(x: self.frame.width - 80, y: self.frame.height - 22)
         
         var highestScoreNumber = 0
-        if let highestScore = UserDefaults.standard.object(forKey: "highestScore") {
+        if let highestScore = UserDefaults.standard.object(forKey: Defaults.HIGHEST_SCORE) {
             highestScoreNumber = highestScore as! Int
         }
         highscoreLabel.text = "Highest Score: \(highestScoreNumber)"
         
         highscoreLabel.zPosition = 5
         highscoreLabel.fontSize = 15
-        highscoreLabel.fontName = "Helvetica-Bold"
+        highscoreLabel.fontName = Fonts.HIGHSCORE
         
         return highscoreLabel
     }
     
     func createLogo() {
-        logoImage = SKSpriteNode(imageNamed: "logo")
+        logoImage = SKSpriteNode(imageNamed: Assets.LOGO)
         logoImage.size = CGSize(width: 272, height: 65)
         logoImage.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 100)
         logoImage.setScale(0.5)
@@ -190,11 +190,11 @@ extension GameScene {
     func createTapToPlayLabel() -> SKLabelNode {
         let tapToPlayLabel = SKLabelNode()
         tapToPlayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        tapToPlayLabel.text = "Tap anywhere to play"
+        tapToPlayLabel.text = GameTexts.TAPTOPLAY_LABEL
         tapToPlayLabel.fontColor = UIColor(red: 63/255, green: 79/255, blue: 14/255, alpha: 1.0)
         tapToPlayLabel.zPosition = 5
         tapToPlayLabel.fontSize = 20
-        tapToPlayLabel.fontName = "HelveticaNeue"
+        tapToPlayLabel.fontName = Fonts.TAPTOPLAY
         
         return tapToPlayLabel
     }
