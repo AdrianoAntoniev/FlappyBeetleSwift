@@ -47,6 +47,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             bird.run(repeatActionBird)
             
+            let spawn = SKAction.run {
+                self.wallPair = self.createWalls()
+                self.addChild(self.wallPair)
+            }
+            let delay = SKAction.wait(forDuration: 1.5)
+            let spawnDelay = SKAction.sequence([spawn, delay])
+            let spawnDelayForever = SKAction.repeatForever(spawnDelay)
+            self.run(spawnDelayForever)
+            let distance = CGFloat(self.frame.width + wallPair.frame.width)
+            let movePillars = SKAction.moveBy(x: -distance - 50, y: 0, duration: TimeInterval(0.008 * distance))
+            let removePillars = SKAction.removeFromParent()
+            moveAndRemove = SKAction.sequence([movePillars, removePillars])
+            
             attachVelocityAndImpulseToBird()
         } else {
             if !isDied {
@@ -220,5 +233,56 @@ extension GameScene {
         tapToPlayLabel.fontName = Fonts.TAPTOPLAY
         
         return tapToPlayLabel
+    }
+    
+    func createWalls() -> SKNode {
+        let flowerNode = SKSpriteNode(imageNamed: Assets.FLOWER)
+        flowerNode.size = CGSize(width: 40, height: 40)
+        flowerNode.position = CGPoint(x: self.frame.width + 25, y: self.frame.height / 2)
+        flowerNode.physicsBody = SKPhysicsBody(rectangleOf: flowerNode.size)
+        flowerNode.physicsBody?.affectedByGravity = false
+        flowerNode.physicsBody?.isDynamic = false
+        flowerNode.physicsBody?.categoryBitMask = CollisionBitMask.FLOWER_CATEGORY
+        flowerNode.physicsBody?.collisionBitMask = 0
+        flowerNode.physicsBody?.contactTestBitMask = CollisionBitMask.BIRD_CATEGORY
+        flowerNode.color = SKColor.blue
+
+        wallPair = SKNode()
+        wallPair.name = Assets.WALLPAIR_NAME
+        
+        let topWall = createSpriteNodeWall(isBottom: false)
+        let bottomWall = createSpriteNodeWall(isBottom: true)
+        topWall.zRotation = CGFloat(Double.pi)
+        
+        wallPair.addChild(topWall)
+        wallPair.addChild(bottomWall)
+        wallPair.zPosition = 1
+        
+        let randomPosition = RandomNumbers.getARandomCGFloatInBounds(min: -200, max: 200)
+        wallPair.position.y = wallPair.position.y + randomPosition
+        wallPair.addChild(flowerNode)
+        
+        wallPair.run(moveAndRemove)
+        
+        return wallPair
+        
+    }
+    
+    func createSpriteNodeWall(isBottom: Bool) -> SKSpriteNode {
+        let wallXPosition = self.frame.width + 25
+        let yPosition = isBottom ? -420 : 420
+        let wallYPosition = self.frame.height / 2 + CGFloat(yPosition)
+        
+        let wall = SKSpriteNode(imageNamed: Assets.PILLER)
+        wall.position  = CGPoint(x: wallXPosition, y: wallYPosition)
+        wall.setScale(0.5)
+        wall.physicsBody = SKPhysicsBody(rectangleOf: wall.size)
+        wall.physicsBody?.categoryBitMask = CollisionBitMask.PILLAR_CATEGORY
+        wall.physicsBody?.collisionBitMask = CollisionBitMask.BIRD_CATEGORY
+        wall.physicsBody?.contactTestBitMask = CollisionBitMask.BIRD_CATEGORY
+        wall.physicsBody?.isDynamic = false
+        wall.physicsBody?.affectedByGravity = false
+        
+        return wall
     }
 }

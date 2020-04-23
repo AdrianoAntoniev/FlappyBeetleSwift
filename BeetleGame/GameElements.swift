@@ -22,10 +22,14 @@ struct Assets {
     static let PLAYER_ATLAS_FILE_NAME = "player"
     static let BACKGROUND_NAME = "background"
     static let BACKGROUND_FILE_NAME = "bg"
+    static let WALLPAIR_NAME = "wallPair"
+    
     static let BIRD_FILES = ["bird1", "bird2", "bird3", "bird4"]
     static let RESTART_BUTTON = "restart"
     static let PAUSE_BUTTON = "pause"
     static let LOGO = "logo"
+    static let FLOWER = "flower"
+    static let PILLER = "piller"
 }
 
 struct Fonts {
@@ -40,4 +44,12 @@ struct Defaults {
 
 struct GameTexts {
     static let TAPTOPLAY_LABEL = "Tap anywhere to play"
+}
+
+struct RandomNumbers {
+    static func getARandomCGFloatInBounds(min: CGFloat, max: CGFloat) -> CGFloat {
+        let randomNumber = CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        
+        return randomNumber * (max - min) + min
+    }
 }
