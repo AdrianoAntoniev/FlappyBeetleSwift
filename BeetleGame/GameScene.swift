@@ -17,7 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score: Int = 0
     var scoreLabel = SKLabelNode()
     var highScoreLabel = SKLabelNode()
-    var taptopPlayLabel = SKLabelNode()
+    var taptoPlayLabel = SKLabelNode()
     var restartButton = SKSpriteNode()
     var pauseButton = SKSpriteNode()
     var logoImage = SKSpriteNode()
@@ -85,6 +85,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let animateBird = SKAction.animate(with: self.birdSprites as! [SKTexture], timePerFrame: 0.1)
         self.repeateActionBird = SKAction.repeatForever(animateBird)
+        
+        scoreLabel = createScoreLabel()
+        self.addChild(scoreLabel)
+        
+        highScoreLabel = createHighscoreLabel()
+        self.addChild(highScoreLabel)
+        
+        createLogo()
+        
+        taptoPlayLabel = createTapToPlayLabel()
+        self.addChild(taptoPlayLabel)
     }
 }
 
@@ -106,7 +117,85 @@ extension GameScene {
         bird.physicsBody?.isDynamic = true
         
         return bird
+    }
+    
+    func createRestartButton() {
+        restartButton = SKSpriteNode(imageNamed: "restart")
+        restartButton.size = CGSize(width: 100, height: 100)
+        restartButton.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        restartButton.zPosition = 6
+        restartButton.setScale(0)
+        self.addChild(restartButton)
+        restartButton.run(SKAction.scale(to: 1.0, duration: 0.3))
+    }
+    
+    func createPauseButton() {
+        pauseButton = SKSpriteNode(imageNamed: "pause")
+        pauseButton.size = CGSize(width: 40, height: 40)
+        pauseButton.position = CGPoint(x: self.frame.width - 30, y: 30)
+        pauseButton.zPosition = 6
+        self.addChild(pauseButton)
+    }
+    
+    func createScoreLabel() -> SKLabelNode {
+        let scoreLabel = SKLabelNode()
+        scoreLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 + self.frame.height / 2.6)
+        scoreLabel.text = "\(score)"
+        scoreLabel.zPosition = 5
+        scoreLabel.fontSize = 50
+        scoreLabel.fontName = "HelveticaNeue-Bold"
         
+        let scoreBackground = SKShapeNode()
+        scoreBackground.position = CGPoint(x: 0, y: 0)
         
+        let scoreBackgroundPathRoundedRect = CGRect(x: CGFloat(-50), y: CGFloat(-30), width: CGFloat(100), height: CGFloat(100))
+        scoreBackground.path = CGPath(roundedRect: scoreBackgroundPathRoundedRect, cornerWidth: 50, cornerHeight: 50, transform: nil)
+        
+        let scoreBackgroundColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(0.0 / 255.0), blue: CGFloat(0.0 / 255), alpha: CGFloat(0.2))
+        
+        scoreBackground.strokeColor = UIColor.clear
+        scoreBackground.fillColor = scoreBackgroundColor
+        scoreBackground.zPosition = -1
+        scoreLabel.addChild(scoreBackground)
+        
+        return scoreLabel
+    }
+    
+    func createHighscoreLabel() -> SKLabelNode {
+        let highscoreLabel = SKLabelNode()
+        highscoreLabel.position = CGPoint(x: self.frame.width - 80, y: self.frame.height - 22)
+        
+        var highestScoreNumber = 0
+        if let highestScore = UserDefaults.standard.object(forKey: "highestScore") {
+            highestScoreNumber = highestScore as! Int
+        }
+        highscoreLabel.text = "Highest Score: \(highestScoreNumber)"
+        
+        highscoreLabel.zPosition = 5
+        highscoreLabel.fontSize = 15
+        highscoreLabel.fontName = "Helvetica-Bold"
+        
+        return highscoreLabel
+    }
+    
+    func createLogo() {
+        logoImage = SKSpriteNode(imageNamed: "logo")
+        logoImage.size = CGSize(width: 272, height: 65)
+        logoImage.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 100)
+        logoImage.setScale(0.5)
+        self.addChild(logoImage)
+        logoImage.run(SKAction.scale(to: 1.0, duration: 0.3))
+    }
+    
+    func createTapToPlayLabel() -> SKLabelNode {
+        let tapToPlayLabel = SKLabelNode()
+        tapToPlayLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        tapToPlayLabel.text = "Tap anywhere to play"
+        tapToPlayLabel.fontColor = UIColor(red: 63/255, green: 79/255, blue: 14/255, alpha: 1.0)
+        tapToPlayLabel.zPosition = 5
+        tapToPlayLabel.fontSize = 20
+        tapToPlayLabel.fontName = "HelveticaNeue"
+        
+        return tapToPlayLabel
     }
 }
